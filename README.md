@@ -16,3 +16,5 @@ client = OpenAI(api_key = ' ENTER KEY HERE ')
 Then run the program with ```python3 -m main``` and paste your URL as requested, be sure to paste the entire URL.
 
 The program will then return a 100-word summary of the provided video.
+
+The program also provides timestamps for topics in the video, however, this feature is inconsistent (so far).
