@@ -1,7 +1,8 @@
 import summary
 
-video_url = input("Enter video URL: ")
-video_id = video_url.replace("https://www.youtube.com/watch?v=", "")
+video_url = input('Enter video URL: ')
+video_id = video_url.replace('https://www.youtube.com/watch?v=', '')
 
-print(summary.getTranscript(video_id))
-
+print('--- SUMMARY --- \n')
+print(summary.getSummary(video_id))
+print('\n')
