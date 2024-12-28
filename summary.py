@@ -35,14 +35,14 @@ def getSummary(video_id):
     return summary
 
 def getTimestamps(video_id):
-    transcript = getTranscript(video_id)
-
+    transcript = str(YouTubeTranscriptApi.get_transcript(video_id))
     response = client.chat.completions.create(
-        model = "gpt-3.5-turbo",
+        model = "gpt-3.5-turbo-16k",
         messages =   [
             {"role": "system", "content": "You are a database organizer."},
-            {"role": "assistant", "content": "Give timestamps of things talked about in the transcript, the timestamps should be in MM:SS format"},
-            {"role": "user", "content": transcript}
+            {"role": "assistant", "content": "data is stroed in JSON {text:'', start:'', duration:''}"},
+            {"role": "assistant", "content": transcript},
+            {"role": "user", "content": "Give the main topics discussed in the video, along with start time codes in seconds"}
         ]
     )
 
