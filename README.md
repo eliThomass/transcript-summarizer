@@ -17,4 +17,4 @@ Then run the program with ```python3 -m main``` and paste your URL as requested,
 
 The program will then return a 100-word summary of the provided video.
 
-The program also provides timestamps for topics in the video, however, this feature is inconsistent (so far).
+The program also provides timestamps for topics in the video in seconds.
