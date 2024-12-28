@@ -1,5 +1,6 @@
 # transcript-summarizer
 A simple project utilizing APIs which gives a summary of a YouTube video using its URL.
+This project was my first experience using APIs, and took me around 3 hours to complete.
 
 To install the required APIs (Python), run these commands into the terminal:
 ```
