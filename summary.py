@@ -25,7 +25,7 @@ def getSummary(video_id):
         model = "gpt-3.5-turbo",
         messages =   [
             {"role": "system", "content": "You are a journalist."},
-            {"role": "assistant", "content": "What topics are discussed in the video? Provide start time codes in seconds" },
+            {"role": "assistant", "content": "Write a 100-word summary of the video." },
             {"role": "user", "content": transcript}
         ]
     )
@@ -36,13 +36,14 @@ def getSummary(video_id):
 
 def getTimestamps(video_id):
     transcript = str(YouTubeTranscriptApi.get_transcript(video_id))
+
     response = client.chat.completions.create(
         model = "gpt-3.5-turbo-16k",
         messages =   [
             {"role": "system", "content": "You are a database organizer."},
             {"role": "assistant", "content": "data is stroed in JSON {text:'', start:'', duration:''}"},
             {"role": "assistant", "content": transcript},
-            {"role": "user", "content": "Give the main topics discussed in the video, along with start time codes in seconds"}
+            {"role": "user", "content": "Give the main topics discussed in the video, along with start time codes in seconds rounded to nearest whole value"}
         ]
     )
 
